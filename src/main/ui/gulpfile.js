@@ -30,7 +30,7 @@ var compress = true;
 var paths = {
 	static: {
 		source: "./src/",
-		target: "./static/"
+		target: "../resources/assets/static/"
 	},
 	build: {
 		source: "./build/source/",
@@ -53,10 +53,10 @@ var options = {
 	uglify: {
 		compress: {
 			drop_console: true,
-			sequences: true, // join consecutive statemets with the “comma operator”
+			sequences: true, // join consecutive statemets with the ï¿½comma operatorï¿½
 			properties: true, // optimize property access: a["foo"] ? a.foo
 			dead_code: true, // discard unreachable code
-			drop_debugger: true, // discard “debugger” statements
+			drop_debugger: true, // discard ï¿½debuggerï¿½ statements
 			unsafe: false, // some unsafe optimizations (see below)
 			conditionals: true, // optimize if-s and conditional expressions
 			comparisons: true, // optimize comparisons
