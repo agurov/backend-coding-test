@@ -27,14 +27,15 @@ var cleancss = new LessPluginCleanCSS({ advanced: true, verbose: true, debug: tr
 var compress = true;
 
 // Source and destination dirs
+var tempDir = "../../../target/ui";
 var paths = {
 	static: {
 		source: "./src/",
 		target: "../resources/assets/static/"
 	},
 	build: {
-		source: "./build/source/",
-		target: "./build/dest/"
+		source: tempDir + "/build/source/",
+		target: tempDir + "/build/dest/"
 	},
 	copy: [
 		"fonts/**/*.*",
@@ -149,13 +150,13 @@ gulp.task("uncompressed", function() {
 // Clean copied source directories          
 gulp.task("clean-source", function() {
 	return gulp.src(paths.build.source, { read: false })
-		.pipe(clean());
+		.pipe(clean({force: true}));
 });
 
 // Clean build directories
 gulp.task("clean-target", function() {
 	return gulp.src(paths.build.target, { read: false })
-		.pipe(clean());
+		.pipe(clean({force: true}));
 });
 
 // Clean all directories
