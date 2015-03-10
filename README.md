@@ -1,3 +1,45 @@
+Running application
+===================
+
+To run on DEV environment
+------------------
+Prerequisites:
+   - Install Java
+   - Install Maven
+   - Install Node.js (includes npm)
+   - Install PostgreSQL (>=9.1)
+     Create role and datebase:
+        > CREATE ROLE codingtest LOGIN UNENCRYPTED PASSWORD 'sql' VALID UNTIL 'infinity';
+        > CREATE DATABASE codingtestdb WITH ENCODING='UTF8' OWNER=codingtest CONNECTION LIMIT=-1;
+
+1. Execute next commands in console:
+   > cd <project_root>
+   > maven clean package
+   > java -jar target/codingtest-1.0-SNAPSHOT.jar server config.yml
+2. Application is available at: http://localhost:8080
+
+
+To run using Vagrant
+--------------------
+Prerequisites:
+   - Install Java
+   - Install Maven
+   - Install Node.js (includes npm)
+   - Install VirtualBox
+   - Install Vagrant
+
+1. Execute next commands in console:
+   > cd <project_root>
+   > maven clean package
+   > vagrant up
+   Note: first run of 'vagrant up' can be time consuming due to download (VM image, Java, Postgres) process
+2. Application is available at: http://localhost:18080
+3. To stop application execute 'vagrant halt'
+
+
+///////////////////////////////////////////////////////////////////
+
+
 Goal
 ====
 Produce a simple web-app backend to complement the supplied front-end code. Note that the front-end renders nicely in Chrome but has some issues in Firefox. This is deliberate - see the 'Extra Credit' section.
