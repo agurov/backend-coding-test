@@ -15,14 +15,13 @@ Prerequisites:
 > CREATE DATABASE codingtestdb WITH ENCODING='UTF8' OWNER=codingtest CONNECTION LIMIT=-1;
 ```
 
-1. Execute next commands in console:
-
+1) Execute next commands in console:
 ```
 > cd <project_root>
 > maven clean package
 > java -jar target/codingtest-1.0-SNAPSHOT.jar server config.yml
 ```
-2. Application is available at: http://localhost:8080
+2) Application is available at: http://localhost:8080
 
 **Note:** In DEV environment you might want specify `-DdevMode` java property to be able to see frontend changes
       right away. With this property enabled static resources are served from "resources/assets" folder and not
@@ -37,14 +36,14 @@ Prerequisites:
    * Install VirtualBox
    * Install Vagrant
 
-1. Execute next commands in console:
-   ```
-   cd <project_root>
-   maven clean package
-   vagrant up
-   ```
-2. Application is available at: (http://localhost:18080)
-3. To stop application execute `vagrant halt`
+1) Execute next commands in console:
+```
+> cd <project_root>
+> maven clean package
+> vagrant up
+```
+2) Application is available at: (http://localhost:18080)
+3) To stop application execute `vagrant halt`
 
 **Note:** first run of `vagrant up` can be time consuming due to download (VM image, Java, Postgres) process
 
