@@ -18,6 +18,9 @@ Prerequisites:
    > java -jar target/codingtest-1.0-SNAPSHOT.jar server config.yml
 2. Application is available at: http://localhost:8080
 
+Note: In DEV environment you might want specify '-DdevMode' java property to be able to see frontend changes
+      right away. With this property enabled static resources are served from "resources/assets" folder and not
+      from classpath.
 
 To run using Vagrant
 --------------------
@@ -35,9 +38,6 @@ Prerequisites:
    Note: first run of 'vagrant up' can be time consuming due to download (VM image, Java, Postgres) process
 2. Application is available at: http://localhost:18080
 3. To stop application execute 'vagrant halt'
-
-
-///////////////////////////////////////////////////////////////////
 
 
 Goal

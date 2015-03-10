@@ -40,12 +40,12 @@ print_app_usage () {
   echo ""
   echo "Your Application has been started and can be accessed on your local machine on the forwarded port (default: 18080)"
   echo "  htttp://localhost:18080"
-  echo ""
+  echo "Application log can be found here: <project_root>/vagrant_log.txt"
 }
 
 start_app () {
     cd /vagrant
-    nohup java -jar target/codingtest-1.0-SNAPSHOT.jar server config.yml &
+    nohup java -jar target/codingtest-1.0-SNAPSHOT.jar server config.yml > vagrant_log.txt &
 }
 
 

@@ -1,4 +1,4 @@
-package resources;
+package com.alchemytec.codingtest.resources;
 
 import com.alchemytec.codingtest.core.Expense;
 import com.alchemytec.codingtest.db.ExpenseDAO;
