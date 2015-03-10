@@ -3,8 +3,18 @@ server:
   applicationContextPath: /
   rootPath: /api/*
 
+
 logging:
   level: INFO
-
   loggers:
     com.alchemytec.codingtest: DEBUG
+
+
+database:
+  driverClass: org.postgresql.Driver
+
+  url: jdbc:postgresql://localhost:5432/codingtestdb
+  user: codingtest
+  password: sql
+
+  validationQuery: "SELECT 1"
