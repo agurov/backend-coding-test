@@ -42,7 +42,7 @@ Prerequisites:
 > maven clean package
 > vagrant up
 ```
-2) Application is available at: (http://localhost:18080)
+2) Application is available at: http://localhost:18080
 3) To stop application execute `vagrant halt`
 
 **Note:** first run of `vagrant up` can be time consuming due to download (VM image, Java, Postgres) process
