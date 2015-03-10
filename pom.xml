@@ -41,6 +41,7 @@
                 </configuration>
             </plugin>
 
+            <!-- Creating Uber-jar (single jar that contains all data) -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
@@ -76,6 +77,39 @@
                 </executions>
             </plugin>
 
+            <!-- Running frontend sources generation -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.3.2</version>
+                <executions>
+                    <execution>
+                        <id>exec-npm-install</id>
+                        <phase>generate-sources</phase>
+                        <configuration>
+                            <executable>npm</executable>
+                            <workingDirectory>${basedir}/src/main/ui</workingDirectory>
+                            <arguments>
+                                <argument>install</argument>
+                            </arguments>
+                        </configuration>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>exec-gulp</id>
+                        <phase>process-resources</phase>
+                        <configuration>
+                            <executable>gulp</executable>
+                            <workingDirectory>${basedir}/src/main/ui</workingDirectory>
+                        </configuration>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
 
