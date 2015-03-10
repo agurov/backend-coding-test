@@ -38,12 +38,11 @@ Prerequisites:
    * Install Vagrant
 
 1. Execute next commands in console:
-
-```
-> cd <project_root>
-> maven clean package
-> vagrant up
-```
+   ```
+   > cd <project_root>
+   > maven clean package
+   > vagrant up
+   ```
 2. Application is available at: http://localhost:18080
 3. To stop application execute `vagrant halt`
 
