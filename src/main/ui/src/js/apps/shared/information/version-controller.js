@@ -21,7 +21,7 @@ app.controller("ctrlVersion", ["$rootScope", "$scope", function VersionCtrl($roo
 	}
 	
 	// Update the tab sections
-	$rootScope.selectTabSection("version", 0);
+	$rootScope.selectTabSection("version", 1);
 	
 	console.log(angular.version, angular.version.full);
 	console.log($rootScope.config.version);

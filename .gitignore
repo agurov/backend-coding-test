@@ -1,7 +1,7 @@
 # IDEA
-/.idea
 *.iml
+/.idea
+/target
 
 # Node.js
 node_modules
-build

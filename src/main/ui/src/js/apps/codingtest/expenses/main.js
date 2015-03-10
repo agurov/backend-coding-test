@@ -9,10 +9,12 @@ Tasks main
 require("./expenses-controller.js");
 
 var app = angular.module("expenses.controllers", [
-	"expenses.controller"
+	"expenses.controller", "restangular"
 ]);
 
-app.config(["$routeProvider", function($routeProvider) {
+app.config(["$routeProvider", "RestangularProvider", function($routeProvider, RestangularProvider) {
+    RestangularProvider.setBaseUrl("/api");
+
 	// Labour analysis routes
 	$routeProvider.when("/expenses", { templateUrl: "expenses-content.html" });
 	
@@ -25,8 +27,12 @@ app.run(["$rootScope", function($rootScope) {
 	$rootScope.appSections.push({ title: "Expenses", image: "static/img/icon-generic.png", app: "expenses" });
 	
 	// Configure tab sections
+    var tabSections = [
+        { title: "Expenses", app: "expenses" },
+        { title: "Version", app: "version" }
+    ];
+
 	$rootScope.tabSections = $rootScope.tabSections || {};
-	$rootScope.tabSections.expenses = [
-		{ title: "Expenses", app: "expenses" }
-	];
+	$rootScope.tabSections.expenses = tabSections;
+    $rootScope.tabSections.version = tabSections;
 }]);

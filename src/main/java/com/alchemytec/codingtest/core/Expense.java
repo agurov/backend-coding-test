@@ -13,6 +13,8 @@ public class Expense {
     @Length(max = 255)
     private String reason;
 
+    public Expense() {}
+
     public Expense(long id, Date date, BigDecimal amount, String reason) {
         this.id = id;
         this.date = date;
